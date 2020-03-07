@@ -5,6 +5,7 @@ const AddEmployeeForm = props => {
     return(
         <form>
             <TextField id="outlined-search" label="First Name" type="text" variant="outlined" />
+            <TextField id="outlined-search" label="First Name" type="text" variant="outlined" />
         </form>
     )
 }
