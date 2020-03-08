@@ -21,15 +21,30 @@ const employeeList = props =>(
             <TableBody>
                     {props.employees.length > 0 ?(
                         props.employees.map(employee =>(
-                            <TableRow>
+                            <TableRow key={employee.id}>
 
                                 <TableCell>{employee.id}</TableCell>
                                 <TableCell>{employee.fName}</TableCell>
                                 <TableCell>{employee.lName}</TableCell>
                                 <TableCell>{employee.age}</TableCell>
                                 <TableCell>
-                                    <Button size="small"> Edit </Button>
-                                    <Button size="small" color="secondary"> Delete </Button>
+                                    <Button 
+                                        variant="contained" 
+                                        m={3} 
+                                        size="small"
+                                        
+                                        onClick={() => {
+                                            props.edit(employee)
+                                        }}
+                                        > Edit </Button>
+                                    <Button 
+                                        variant="contained" 
+                                        m={3} 
+                                        size="small" 
+                                        color="secondary"
+
+                                        onClick={()=> props.delEmployee(employee.id)}
+                                    > Delete </Button>
                                 </TableCell>
 
                             </TableRow>

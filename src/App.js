@@ -20,16 +20,20 @@ function App() {
     setEmployees([...employees, employee])
   }
 
+  const delEmployee = id =>{
+    setEmployees(employees.filter(employees => employees.id !== id))
+  }
   return (
     <Container fixed>
       <h1>John Guerrero</h1>
       <p>Hi LeanDev, as promise here's my sample of React Project</p>
       <Grid container spacing={3}>
         <Grid item xs={6} component={Paper}>
-          <EmployeeForm addEmployee={addEmployee}/>
         </Grid>
         <Grid item xs={6}>
-          <EmployeeListing employees={employees}/>
+          <EmployeeForm addEmployee={addEmployee}/>
+
+          <EmployeeListing employees={employees} delEmployee={delEmployee}/>
         </Grid>
       </Grid>
     </Container>
