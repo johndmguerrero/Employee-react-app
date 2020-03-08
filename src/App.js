@@ -22,7 +22,8 @@ function App() {
 
   const addEmployee = employee =>{
     employee.id = employees.length + 1
-    setEmployees([...employees, employee])
+    console.log('3')
+    setEmployees([ ...employees, employee ])
   }
 
   const delEmployee = id =>{
@@ -38,17 +39,17 @@ function App() {
   const editEmployee = employee =>{
     setEdit(true)
     setCurrentEmployee({
-      id: employees.id,
-      fName: employees.fName,
-      lName: employees.lName,
-      age: employees.age
+      id: employee.id,
+      fName: employee.fName,
+      lName: employee.lName,
+      age: employee.age
     })
   }
 
   // update employee
   const upEmployee = (id,update) =>{
     setEdit(false)
-
+    console.log(id)
     setEmployees(employees.map(employee => (employee.id === id ? update : employee)))
   }
 
@@ -58,9 +59,7 @@ function App() {
       <p>Hi LeanDev, as promise here's my sample of React Project</p>
       <Grid container spacing={3}>
         <Grid item xs={6} component={Paper}>
-        </Grid>
-        <Grid item xs={6}>
-          { edit ?(
+          { edit ? (
             <EmployeeEditForm 
               edit={edit}
               setEdit={setEdit}
@@ -68,11 +67,19 @@ function App() {
               upEmployee={upEmployee}
             />
           ) : (
-            
-            <EmployeeForm addEmp={addEmployee}/>
+            <EmployeeForm addEmployee={addEmployee}/>
           )}
 
-          <EmployeeListing employees={employees} delEmployee={delEmployee} editEmployee={editEmployee}/>
+        </Grid>
+        <Grid item xs={6}>
+
+
+
+          <EmployeeListing employees={employees} 
+          delEmployee={delEmployee} 
+          editEmployee={editEmployee}
+          
+          />
         </Grid>
       </Grid>
     </Container>

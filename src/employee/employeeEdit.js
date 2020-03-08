@@ -63,7 +63,7 @@ const EmployeeEdit = props =>{
                     />
             </div>
             <div>
-                <Button variant="contained" onClick={() => props.setEdit(false)} m={3} size="small" color="primary"> Submit </Button>
+                <Button type="submit" variant="contained" onClick={() => props.setEdit(false)} m={3} size="small" color="primary"> Update </Button>
             </div>
         </form>
     )
