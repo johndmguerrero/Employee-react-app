@@ -47,10 +47,10 @@ function App() {
   }
 
   // update employee
-  const upEmployee = (id,update) =>{
+  const upEmployee = (id,updateEmployee) =>{
     setEdit(false)
     console.log(id)
-    setEmployees(employees.map(employee => (employee.id === id ? update : employee)))
+    setEmployees(employees.map(employee => (employee.id === id ? updateEmployee : employee)))
   }
 
   return (

@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 const EmployeeEdit = props =>{
+
+    useEffect(()=>{
+        setEmployee(props.currentEmployee)
+    }, [props])
 
     const [employee, setEmployee] = useState(props.currentEmployee)
 
@@ -63,7 +67,7 @@ const EmployeeEdit = props =>{
                     />
             </div>
             <div>
-                <Button type="submit" variant="contained" onClick={() => props.setEdit(false)} m={3} size="small" color="primary"> Update </Button>
+                <Button type="submit" variant="contained" m={3} size="small" color="primary"> Update </Button>
             </div>
         </form>
     )
