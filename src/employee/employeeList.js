@@ -34,7 +34,7 @@ const employeeList = props =>(
                                         size="small"
                                         
                                         onClick={() => {
-                                            props.edit(employee)
+                                            props.editEmployee(employee)
                                         }}
                                         > Edit </Button>
                                     <Button 
