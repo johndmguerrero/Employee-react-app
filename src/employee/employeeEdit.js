@@ -1,6 +1,8 @@
 import React, { useState , useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
 
 const EmployeeEdit = props =>{
 
@@ -16,6 +18,7 @@ const EmployeeEdit = props =>{
     }
 
     return(
+        <Box component={Paper}>
         <form
             onSubmit={event => {
                 event.preventDefault()
@@ -70,6 +73,7 @@ const EmployeeEdit = props =>{
                 <Button type="submit" variant="contained" m={3} size="small" color="primary"> Update </Button>
             </div>
         </form>
+        </Box>
     )
 }
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import Paper from '@material-ui/core/Paper';
 
 
 const AddEmployeeForm = props => {
@@ -15,6 +17,7 @@ const AddEmployeeForm = props => {
     }
 
     return(
+        <Box component={Paper} style={{ padding: "20px", marginBottom: "30px"}}>
         <form
             onSubmit={event => {
                 // console.log(3)
@@ -74,6 +77,7 @@ const AddEmployeeForm = props => {
                 <Button type="submit" variant="contained" size="small" color="primary"> Submit </Button>
             </div>
         </form>
+        </Box>
     )
 }
 

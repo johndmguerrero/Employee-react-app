@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import EmployeeListing from './employee/employeeList';
 import EmployeeForm from './employee/employeeForm';
 import EmployeeEditForm from './employee/employeeEdit';
@@ -54,12 +51,12 @@ function App() {
   }
 
   return (
-    <Container fixed >
+    <div style={{maxWidth: "500px",display: "block", margin: "auto" }}>
       <h1>John Guerrero</h1>
       <p>Hi LeanDev, as promise here's my sample of React Project</p>
-      <Grid container spacing={3}>
-        <Grid item xs={6} component={Paper}>
-          { edit ? (
+
+      <div className="ui-form">
+      { edit ? (
             <EmployeeEditForm 
               edit={edit}
               setEdit={setEdit}
@@ -69,20 +66,16 @@ function App() {
           ) : (
             <EmployeeForm addEmployee={addEmployee}/>
           )}
-
-        </Grid>
-        <Grid item xs={6}>
-
-
+      </div>
+        <div className="employee-listing">
 
           <EmployeeListing employees={employees} 
           delEmployee={delEmployee} 
           editEmployee={editEmployee}
           
           />
-        </Grid>
-      </Grid>
-    </Container>
+        </div>      
+    </div>
   );
 }
 
