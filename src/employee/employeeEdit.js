@@ -18,7 +18,7 @@ const EmployeeEdit = props =>{
     }
 
     return(
-        <Box component={Paper}>
+        <Box component={Paper} style={{ padding: "20px", marginBottom: "30px"}}>
         <form
             onSubmit={event => {
                 event.preventDefault()
